@@ -18,12 +18,20 @@ def main():
             fc.turn_right(30)
             distance = fc.get_distance_at(angle)
             print("distance: ", str(distance))
+            check_view()
         else:
             time.sleep(.2)
             distance = fc.get_distance_at(angle)
             print("distance", str(distance))
             fc.forward(speed)
+            check_view()
 
+def check_view(fov = 40):
+    dist_list = []
+    for i in range (angle - fov, angle + fov, 10):
+        distance = fc.get_distance_at(i)
+        dist_list.append(distance)
+    print(dist_list)
 
             
 
