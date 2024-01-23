@@ -5,7 +5,7 @@ try:
     while True:
         for i in range(-90, 90, 10):
             print(i)
-            fc.set_angle(i)
+            fc.servo.set_angle(i)
             time.sleep(1)
 finally:
     fc.stop()
