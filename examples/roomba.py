@@ -10,12 +10,14 @@ def main():
     distance = 100
     while True:
         if distance < threshold and distance != -2:
-            fc.backward(speed)
+            time.sleep(.2)
+            fc.backward(speed*2)
             fc.stop()
             turn = random.randint(-90, 90)
             print("turn: ", str(turn))
-            fc.turn_right(turn)
+            fc.turn_right(30)
             distance = fc.get_distance_at(angle)
+            print("distance: ", str(distance))
         else:
             time.sleep(.2)
             distance = fc.get_distance_at(angle)
