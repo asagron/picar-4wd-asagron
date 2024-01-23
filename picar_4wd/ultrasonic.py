@@ -38,7 +38,7 @@ class Ultrasonic():
                 return -2
         during = pulse_end - pulse_start
         cm = round(during * 340 / 2 * 100, 2)
-        print(cm)
+        # print(cm)
         return cm
 
     # def get_distance_at(self, angle):
