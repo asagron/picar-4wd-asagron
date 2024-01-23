@@ -10,10 +10,11 @@ def main():
     distance = 100
     while True:
         while threshold < distance:
+            time.sleep(.2)
             distance = fc.get_distance_at(angle)
             print(distance)
             fc.forward(speed)
-        print("done")
+        fc.stop()
 
         # time.sleep(1)
         # scan_list = fc.scan_step(35)
