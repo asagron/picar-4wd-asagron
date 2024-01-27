@@ -7,7 +7,7 @@ angle = 50
 
 def main():
     threshold = 30
-    distance = distance = check_view()
+    distance = check_view()
     while True:
         if distance < threshold:
             time.sleep(.2)
