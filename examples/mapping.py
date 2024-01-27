@@ -3,7 +3,7 @@ import time
 import random
 import math
 import numpy as np
-from scipy.ndimage import maximum_filter
+# from scipy.ndimage import maximum_filter
 
 angle = 10
 grid_size = 300
