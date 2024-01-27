@@ -10,8 +10,8 @@ def main():
         distance = fc.get_distance_at(angle-60)
         for i in range (-60, 61, 5):
             distance = fc.get_distance_at(angle + i)
-            x = distance * math.sin(i)
-            y = distance * math.cos(i)
+            x = distance * math.sin(math.radians(i))
+            y = distance * math.cos(math.radians(i))
             print("Angle " + str(i) + ": " + str(distance) + "Coord: " + str(x) + "," + str(y))
             time.sleep(1)
 
