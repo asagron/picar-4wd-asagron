@@ -5,8 +5,10 @@ import math
 import numpy as np
 # from scipy.ndimage import maximum_filter
 
+np.set_printoptions(threshold=np.inf)
+
 angle = 10
-grid_size = 300
+grid_size = 200
 
 def main():
     # map = np.zeros((grid_size, grid_size))
