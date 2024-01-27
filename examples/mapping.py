@@ -10,6 +10,7 @@ def main():
             time.sleep(1)
             distance = fc.get_distance_at(angle + i)
             print(str(i), str(distance))
+            time.sleep(1)
 if __name__ == "__main__":
     try: 
         main()
