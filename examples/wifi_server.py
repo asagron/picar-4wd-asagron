@@ -59,13 +59,13 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 print(data)
                 direction = Keyboard_control(data)
                 print(direction)
-                power_val = power_read()
-                print(power_val)
-                cpu_temp = cpu_temperature()
-                print(cpu_temp)
-                send_back = [direction, power_val, cpu_temp]
-                client.sendall(send_back) # Echo back to client
+                power = power_read()
+                print(power)
+                #temp = cpu_temperature()
+                #print(temp)
+                client.sendall(data) # Echo back to client
     except: 
         print("Closing socket")
         client.close()
         s.close()   
+
