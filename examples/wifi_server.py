@@ -10,26 +10,26 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.listen()
 
     def Keyboard_control(key):
-        while True:
-            global power_val
-            #key=readkey()
-            if key== b"87":
-                print("forward")
-                fc.forward(power_val)
-            elif key==b"83":
-                print("left")
-                fc.turn_left(power_val)
-            elif key==b"65":
-                print("backward")
-                fc.backward(power_val)
-            elif key==b"68":
-                print("right")
-                fc.turn_right(power_val)
-            else:
-                fc.stop()
-            if key==b"q":
-                print("quit")  
-                break  
+        global power_val
+        #key=readkey()
+        print(key)
+        if key== b"87":
+            print("forward")
+            fc.forward(power_val)
+        elif key==b"83":
+            print("left")
+            fc.turn_left(power_val)
+        elif key==b"65":
+            print("backward")
+            fc.backward(power_val)
+        elif key==b"68":
+            print("right")
+            fc.turn_right(power_val)
+        else:
+            fc.stop()
+        if key==b"q":
+            print("quit")  
+            break  
     try:
         while 1:
             client, clientInfo = s.accept()
