@@ -46,18 +46,19 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             client, clientInfo = s.accept()
             print("server recv from: ", clientInfo)
             data = client.recv(1024)      # receive 1024 Bytes of message in binary format
+            
+            power = int(power_read())
+            print(power)
+            
             if data != b"":
                 print(data)
                 Keyboard_control(data)
-                client.sendall(data) # Echo back to client
+                client.sendall(data, power) # Echo back to client
                 
-            power = power_read()
-            power = str(power)
-            print(power)
-            client.send(power)
 
-    except: 
+    except Exception as e: 
         print("Closing socket")
+        print(e)
         fc.stop()
         client.close()
         s.close()   
